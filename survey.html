@@ -1,30 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Form  </title>
+    <title>Survey Kepuasan Pelanggan</title>
+
+    <style>
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #999;
+            border-radius: 4px;
+        }
+
+        .btn-group {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+    </style>
 </head>
-<style>
-    .card{
-        flex: 1;
-        margin: 10px;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-        padding: 20px;
-    }
-</style>
-<body>
-    <p>Buatlah sebuah halaman web untuk survey kepuasan Pelanggan pada
-        penggunaan Produk tertentu dengan nama file “survey.html”, yang
-        berisi:
-        • Data Pelanggan seperti Nama, Alamat, Tlp, dll
-        • Drop down untuk kategori pelanggan
-        • Check box pilihan produk yang disukai
-        • Radio button untuk pilihan kepuasan pelanggan
-        • Text area sebagai kolom komentar dari pelanggan
-        • Submit dan reset sebagai akhir dari halaman survey</p>
-    <h1></h1>
-    
+<body style="font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;">
+
+    <p><a href="index.html" style="text-decoration: none;">&larr; Kembali ke Halaman Utama</a></p>
+
+    <div style="text-align: center;">
+        <h2>Form Survey Kepuasan Pelanggan</h2>
+        <p>Silakan isi formulir di bawah ini untuk membantu kami meningkatkan layanan.</p>
+    </div>
+
+    <hr>
+
+    <form action="#" method="POST">
+
+        <h3> Data Pelanggan</h3>
+        
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap anda...">
+        </div>
+
+        <div class="form-group">
+            <label for="telepon">No. Telepon:</label>
+            <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor telepon anda...">
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Alamat Lengkap:</label>
+            <textarea id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat anda" style="font-family: Arial, Helvetica, sans-serif;"></textarea>
+        </div>
+
+        <hr>
+
+        <h3> Detail Pelanggan & Produk</h3>
+
+        <div class="form-group">
+            <label for="kategori">Kategori Pelanggan:</label>
+            <select id="kategori" name="kategori">
+                <option value="" disabled selected>-- Pilih Kategori --</option>
+                <option value="baru">Pelanggan Baru</option>
+                <option value="lama">Pelanggan Lama (Reguler)</option>
+                <option value="vip">Pelanggan VIP</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Produk yang Paling Disukai (Bisa pilih > 1):</label>
+            <input type="checkbox" id="prod_web" name="produk" value="Aplikasi Web">
+            <label for="prod_web" style="font-weight: normal; margin-right: 15px;">Pembuatan Aplikasi Web</label><br>
+
+            <input type="checkbox" id="prod_desain" name="produk" value="Desain">
+            <label for="prod_desain" style="font-weight: normal; margin-right: 15px;">Desain Grafis</label><br>
+
+            <input type="checkbox" id="prod_maintenance" name="produk" value="Maintenance">
+            <label for="prod_maintenance" style="font-weight: normal; margin-right: 15px;">Maintenance Website</label>
+        </div>
+
+        <hr>
+
+        <div class="form-group">
+            <label>Tingkat Kepuasan Anda:</label>
+            <input type="radio" id="puas_sangat" name="kepuasan" value="Sangat Puas" required>
+            <label for="puas_sangat" style="font-weight: normal; margin-right: 15px;">Sangat Puas</label>
+            
+            <input type="radio" id="puas_cukup" name="kepuasan" value="Cukup">
+            <label for="puas_cukup" style="font-weight: normal; margin-right: 15px;">Cukup Puas</label>
+
+            <input type="radio" id="puas_kurang" name="kepuasan" value="Kurang Puas">
+            <label for="puas_kurang" style="font-weight: normal;">Kurang Puas</label>
+        </div>
+
+        <div class="form-group">
+            <label for="komentar">Komentar / Saran Tambahan:</label>
+            <textarea id="komentar" name="komentar" rows="4"  placeholder="Beri kami saran atau komentar jika ada..." style="font-family: Arial, Helvetica, sans-serif;"></textarea>
+        </div>
+
+        <hr>
+
+        <div class="btn-group">
+            <button type="submit" style="background-color: #0056b3; color: white; border: 1px solid #004494;">Kirim Survey</button>
+            <button type="reset" style="background-color: #f0f0f0; border: 1px solid #ccc;">Reset Data</button>
+        </div>
+
+    </form>
+
 </body>
 </html>
