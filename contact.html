@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Fadly's Web Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .social-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+        }
+        .social-card h3 {
+            margin-bottom: 0.5rem;
+            font-family: var(--font-display);
+        }
+        .social-card p {
+            color: var(--text-muted);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">FadDev</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Social Media</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2>Connect With Me</h2>
+            <p class="text-muted">Feel free to reach out on any of these platforms.</p>
+        </div>
+
+        <div class="social-grid">
+            <a href="https://www.instagram.com/fdlymhsr/" class="social-card" target="_blank">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">📸</div>
+                <h3>Instagram</h3>
+                <p>@fdlymhsr</p>
+            </a>
+            <a href="https://www.linkedin.com/in/fadly-mahesar-55286b36b/" class="social-card" target="_blank">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">💼</div>
+                <h3>LinkedIn</h3>
+                <p>Fadly Mahesar</p>
+            </a>
+            <a href="https://github.com/fadlix555" class="social-card" target="_blank">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">💻</div>
+                <h3>GitHub</h3>
+                <p>github.io</p>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Muhammad Fadly Mahesar</p>
+    </footer>
+</body>
+</html>

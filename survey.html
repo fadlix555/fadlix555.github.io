@@ -3,94 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survey Kepuasan Pelanggan</title>
-    <link rel="stylesheet" href="mystyle.css">
+    <title>Survey | Fadly's Web Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .survey-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+        .survey-group {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px dashed var(--border);
+        }
+        .survey-group:last-child {
+            border-bottom: none;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .option-item input {
+            width: auto;
+        }
+    </style>
 </head>
 <body>
-    
-    <p><a href="biodata.html" style="text-decoration: none;">&larr; Back to Profile</a></p>
-    
-    <hr>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Fadly.</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Social Media</a></li>
+        </ul>
+    </nav>
 
-    <div style="text-align: center;">
-        <h2>Form Survey Kepuasan Pelanggan</h2>
-        <p>Silakan isi formulir di bawah ini untuk membantu kami meningkatkan layanan.</p>
-    </div>
-    
-    <hr>
-    
-    <form action="#" method="POST">
-        
-        <h3> Data Pelanggan</h3>
-        
-        <div class="form-group">
-            <label for="nama">Nama Lengkap:</label>
-            <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap anda...">
+    <main class="container">
+        <div style="margin-bottom: 2rem;">
+            <a href="index.html" style="text-decoration: none; color: var(--primary); font-weight: 600;">&larr; Back to Home</a>
         </div>
-        
-        <div class="form-group">
-            <label for="telepon">No. Telepon:</label>
-            <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor telepon anda...">
+
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2>Form Survey Kepuasan Pelanggan</h2>
+            <p class="text-muted">Silakan isi formulir di bawah ini untuk membantu kami meningkatkan layanan.</p>
         </div>
-        
-        <div class="form-group">
-            <label for="alamat">Alamat Lengkap:</label>
-            <textarea id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat anda" style="font-family: Arial, Helvetica, sans-serif;"></textarea>
+
+        <div class="survey-section">
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Survey berhasil dikirim!');">
+                
+                <div class="survey-group">
+                    <h3>Data Pelanggan</h3>
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <label for="nama">Nama Lengkap:</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap anda...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telepon">No. Telepon:</label>
+                        <input type="tel" id="telepon" name="telepon" placeholder="Masukkan nomor telepon anda...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="alamat">Alamat Lengkap:</label>
+                        <textarea id="alamat" name="alamat" rows="3" placeholder="Masukkan alamat anda"></textarea>
+                    </div>
+                </div>
+                
+                <div class="survey-group">
+                    <h3>Detail Pelanggan & Produk</h3>
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <label for="kategori">Kategori Pelanggan:</label>
+                        <select id="kategori" name="kategori" style="width: 100%; padding: 1rem; border: 2px solid var(--border); border-radius: 12px; background: #fff;">
+                            <option value="" disabled selected>-- Pilih Kategori --</option>
+                            <option value="baru">Pelanggan Baru</option>
+                            <option value="lama">Pelanggan Lama (Reguler)</option>
+                            <option value="vip">Pelanggan VIP</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Produk yang Paling Disukai (Bisa pilih > 1):</label>
+                        <div class="checkbox-group">
+                            <label class="option-item">
+                                <input type="checkbox" name="produk" value="Aplikasi Web"> Pembuatan Aplikasi Web
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" name="produk" value="Desain"> Desain Grafis
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" name="produk" value="Maintenance"> Maintenance Website
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="survey-group">
+                    <h3>Tingkat Kepuasan</h3>
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <label>Tingkat Kepuasan Anda:</label>
+                        <div class="radio-group" style="flex-direction: row; gap: 30px;">
+                            <label class="option-item">
+                                <input type="radio" name="kepuasan" value="Sangat Puas" required> Sangat Puas
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="kepuasan" value="Cukup"> Cukup Puas
+                            </label>
+                            <label class="option-item">
+                                <input type="radio" name="kepuasan" value="Kurang Puas"> Kurang Puas
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="komentar">Komentar / Saran Tambahan:</label>
+                        <textarea id="komentar" name="komentar" rows="4" placeholder="Beri kami saran atau komentar jika ada..."></textarea>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button type="submit" class="submit-btn" style="flex: 2;">Kirim Survey</button>
+                    <button type="reset" class="submit-btn" style="flex: 1; background: #f1f5f9; color: #475569;">Reset</button>
+                </div>
+                
+            </form>
         </div>
-        
-        <hr>
-        
-        <h3> Detail Pelanggan & Produk</h3>
-        
-        <div class="form-group">
-            <label for="kategori">Kategori Pelanggan:</label>
-            <select id="kategori" name="kategori">
-                <option value="" disabled selected>-- Pilih Kategori --</option>
-                <option value="baru">Pelanggan Baru</option>
-                <option value="lama">Pelanggan Lama (Reguler)</option>
-                <option value="vip">Pelanggan VIP</option>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label>Produk yang Paling Disukai (Bisa pilih > 1):</label>
-            <input type="checkbox" id="prod_web" name="produk" value="Aplikasi Web">
-            <label for="prod_web" style="font-weight: normal; margin-right: 15px;">Pembuatan Aplikasi Web</label><br>
-            
-            <input type="checkbox" id="prod_desain" name="produk" value="Desain">
-            <label for="prod_desain" style="font-weight: normal; margin-right: 15px;">Desain Grafis</label><br>
-            
-            <input type="checkbox" id="prod_maintenance" name="produk" value="Maintenance">
-            <label for="prod_maintenance" style="font-weight: normal; margin-right: 15px;">Maintenance Website</label>
-        </div>
-        
-        <hr>
-        
-        <div class="form-group">
-            <label>Tingkat Kepuasan Anda:</label>
-            <input type="radio" id="puas_sangat" name="kepuasan" value="Sangat Puas" required>
-            <label for="puas_sangat" style="font-weight: normal; margin-right: 15px;">Sangat Puas</label>
-            
-            <input type="radio" id="puas_cukup" name="kepuasan" value="Cukup">
-            <label for="puas_cukup" style="font-weight: normal; margin-right: 15px;">Cukup Puas</label>
-            
-            <input type="radio" id="puas_kurang" name="kepuasan" value="Kurang Puas">
-            <label for="puas_kurang" style="font-weight: normal;">Kurang Puas</label>
-        </div>
-        
-        <div class="form-group">
-            <label for="komentar">Komentar / Saran Tambahan:</label>
-            <textarea id="komentar" name="komentar" rows="4"  placeholder="Beri kami saran atau komentar jika ada..." style="font-family: Arial, Helvetica, sans-serif;"></textarea>
-        </div>
-        
-        <hr>
-        
-        <div class="btn-group">
-            <button type="submit" style="background-color: #0056b3; color: white; border: 1px solid #004494;">Kirim Survey</button>
-            <button type="reset" style="background-color: #f0f0f0; border: 1px solid #ccc;">Reset Data</button>
-        </div>
-        
-    </form>
-    
+    </main>
+
+    <footer>
+        <p>© 2026 Muhammad Fadly Mahesar</p>
+    </footer>
 </body>
 </html>

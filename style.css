@@ -1,0 +1,251 @@
+/* 
+   EXTERNAL STYLE SHEET (Requirement A)
+   Pengaturan Background, Text, Font, dan Tabel (Requirement D)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #4338ca;
+    --bg-color: #f8fafc;
+    --text-color: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --border: #e2e8f0;
+    --font-main: 'Poppins', sans-serif;
+    --font-display: 'Space Grotesk', sans-serif;
+}
+
+/* Pengaturan Background & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Pengaturan Navbar (Requirement C) */
+.navbar {
+    background-color: var(--white);
+    padding: 0 10%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: all 0.3s ease; /* Transition (Requirement E) */
+    font-size: 0.95rem;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--primary);
+}
+
+/* Main Container */
+.container {
+    flex: 1;
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    /* Animation (Requirement E) */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Pengaturan Text */
+h1 { font-family: var(--font-display); font-size: 3rem; margin-bottom: 1rem; }
+h2 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 1.5rem; }
+p { margin-bottom: 1.5rem; }
+
+/* Profile Card Styling */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    object-fit: cover;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-img:hover {
+    transform: scale(1.03) rotate(1deg);
+}
+
+.info-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.info-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Pengaturan Table (Requirement D) */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2rem 0;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border: 1px solid var(--border);
+}
+
+.data-table th, .data-table td {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+    background-color: #f1f5f9;
+    color: var(--text-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:hover {
+    background-color: #fafbfc;
+}
+
+/* Form Styling */
+.form-card {
+    background: var(--white);
+    padding: 3.5rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: #fafafa;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 1.2rem;
+    border: none;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+}
+
+/* Footer Settings */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Animasi (Requirement E) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar {
+        padding: 0 5%;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+}
